@@ -1,0 +1,6 @@
+# App
+server/node_modules
+server/.env
+
+# Note
+note.md

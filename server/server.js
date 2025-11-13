@@ -5,7 +5,7 @@ import connectDB from './configs/db.js'
 import { inngest, functions } from "./inngest/index.js"
 import {serve} from "inngest/express"
 
-connectDB()
+await connectDB()
 const app = express()
 app.use(express.json())
 app.use(cors())

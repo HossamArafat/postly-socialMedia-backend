@@ -12,7 +12,7 @@ const syncUserCreation = inngest.createFunction(
         const {id, first_name, last_name, email_addresses, image_url} = event.data
         const email = email_addresses[0].email_address
         const full_name = last_name ? first_name + ' ' + last_name : first_name
-        const username = email.split("@")[0]
+        let username = email.split("@")[0]
 
         const user = await userModel.findOne({username})
         if(user) username = username + Math.floor(Math.random() * 10000)

@@ -7,7 +7,7 @@ export const inngest = new Inngest({ id: "postly", eventKey: process.env.INNGEST
 // Inngest function to save user of clerk data to a database
 const syncUserCreation = inngest.createFunction(
     {id: "sync-user-from-clerk"},
-    {event: "clerk/user.created"},
+    {event: ["clerk/user.created", "user.created"]},
     async ({event})=> {
         const {id, first_name, last_name, email_addresses, image_url} = event.data
         let email = email_addresses[0].email_address
